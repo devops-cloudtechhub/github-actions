@@ -16,14 +16,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        
       - name: setup terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.9.8
+          
       - name: terraform init
         run: terraform init
+        
       - name: terraform plan
         run: terraform plan -out=tfplan
+        
       - name: Upload Plan Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -44,13 +48,19 @@ jobs:
       steps:
         - name: checkout
           uses: actions/checkout@v4
+          
         - name: setup terraform
           uses: hashicorp/setup-terraform@v3
           with:
             terraform_version: 1.9.8
+            
         - name: download plan artifact
           uses: actions/download-artifact@v4
           with:
             name: tfplan
+            
+        - name: terraform init
+          run: terraform init
+          
         - name: terraform apply
           run: terraform apply -auto-approve tfplan
