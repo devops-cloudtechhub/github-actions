@@ -8,8 +8,8 @@ on:
       runs-on: ubuntu-latest
 
       env:
-        AWS_ACCESS.KEY_ID: ${{ secrets.AWS_ACESS.KEY_ID }}
-        AWS_SECURITY_ACCESS_KEY: ${{ secrets.AWS_SECURITY_ACESS_KEY }}
+        AWS_ACCESS.KEY_ID: ${{ secrets.AWS_ACCESS.KEY_ID }}
+        AWS_SECURITY_ACCESS_KEY: ${{ secrets.AWS_SECURITY_ACCESS_KEY }}
         AWS_REGION: us-east-1
 
         steps:
