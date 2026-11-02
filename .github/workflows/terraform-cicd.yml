@@ -24,7 +24,7 @@ on:
           - name:terraform init
             run: terraform init
           - name: terraform plan
-            run: terrafomr plan -out=tfplan
+            run: terraform plan -out=tfplan
           - name: artifact
             uses: actions/upload-artifact@v3
               with:
