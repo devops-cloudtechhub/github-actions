@@ -24,7 +24,7 @@ jobs:
         run: terraform init
       - name: terraform plan
         run: terraform plan -out=tfplan
-      - name: artifact
+      - name: Upload Plan Artifact
         uses: actions/upload-artifact@v4
         with:
           name: tfplan
@@ -47,7 +47,7 @@ jobs:
           uses: hashicorp/setup-terraform@v3
           with:
             terraform_version: 1.9.8
-        - name: download artifact
+        - name: download plan artifact
           uses: actions/download-artifact@v4
           with:
             name: tfplan
