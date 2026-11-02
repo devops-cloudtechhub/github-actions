@@ -18,3 +18,4 @@ resource "aws_subnet" "name" {
     tags = {
         Name = "my-subnet"
     }
+}
