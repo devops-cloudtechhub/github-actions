@@ -21,7 +21,7 @@ on:
             uses: hashicorp/setup-terraform@v2
             with:
               terraform_version: 1.9.8
-          - name:terraform init
+          - name: terraform init
             run: terraform init
           - name: terraform plan
             run: terraform plan -out=tfplan
@@ -29,13 +29,13 @@ on:
             uses: actions/upload-artifact@v3
               with:
                 name: tfplan
-                path:tfplan
+                path: tfplan
 
     apply:
       name: terraform apply
       runs-on: ubuntu-latest
       needs:plan
-      enivronment: production
+      environment: production
 
       env:
       aws_secret_acess_key: ${{ secrets.aws_secret_access_key }}
