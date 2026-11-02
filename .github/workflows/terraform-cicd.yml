@@ -29,8 +29,8 @@ jobs:
         with:
           name: tfplan
           path: tfplan
-
-    apply:
+          
+  apply:          
       name: terraform apply
       runs-on: ubuntu-latest
       needs: plan
